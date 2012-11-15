@@ -346,6 +346,27 @@ Matrix<T> operator / (const Matrix<T>& a,const Matrix<T>& b){
   not_implemented();
 }
 
+template<class T>
+Matrix<T>
+eye        (int nr,int nc){
+  int n=MIN(nr,nc);
+  Matrix<T> a(nr,nc);
+  a.zero();
+  for(int i=0;i<n;i++)
+    a(i,i)=1;
+  return a;
+}
+
+template<class T>
+Matrix<T>
+zero       (int nr,int nc){
+  Matrix<T> a(nr,nc);
+  a.zero();
+  return a;
+}
+
+
+
 
 template<class T>
 Matrix<T> ary_mul    (const Matrix<T>& a,const Matrix<T>& b){
@@ -390,9 +411,12 @@ Matrix<T> operator ^ (const Matrix<T>& a,int v){
 }
 
 template<class T>
-Matrix<T> inv        (const Matrix<T>& a){
-  not_implemented();
+Matrix<T>
+inv        (const Matrix<T>& a){
+  Matrix<T> e=eye<T>(a.nr,a.nc);
+  return solve_gels(a,e);
 }
+
 
 template<class T>
 T

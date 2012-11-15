@@ -147,6 +147,7 @@ Matrix<double> operator * (const Matrix<double>& a,const Matrix<double>& b){
   return c;
 }
 
+
 template<>
 double
 nrm2(const Matrix<double>& a){

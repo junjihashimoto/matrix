@@ -148,6 +148,7 @@ Matrix<float> operator * (const Matrix<float>& a,const Matrix<float>& b){
   return c;
 }
 
+
 template<>
 float
 nrm2(const Matrix<float>& a){

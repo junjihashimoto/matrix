@@ -16,18 +16,9 @@ test(){
     3,4,
     6,7;
 
-  d.write();
-  d2.write();
-  
-  (d+d).write();
-  d.write();
-  // (d+d2).write();
-  (d*d2).write();
-  (d*d2).write();
-  d.write();
-  d2.write();
-  (-d2).write();
-  (d-d).write();
+
+  inv(d).write();
+  (inv(d)*d).write();
 
 
   Matrix<T> f(2,1);
@@ -45,7 +36,7 @@ test(){
 int
 main(){
   test<double>();
-  test<float>();
-  test<int>();
+  //  test<float>();
+  //  test<int>();
   return 0;
 }

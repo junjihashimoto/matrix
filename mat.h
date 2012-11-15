@@ -10,7 +10,8 @@
 using namespace std;
 
 #define not_implemented() {printf("Not implemented:%s\n",__func__);exit(1);}
-
+#define MIN(x,y) ((x)<=(y) ? (x) : (y))
+#define MAX(x,y) ((x)>=(y) ? (x) : (y))
 
 #define mat_for(mat) \
   for(int c=0;c<mat.ncol();c++)\
@@ -101,6 +102,8 @@ template<class T> Matrix<T> operator / (const Matrix<T>& a,T b);
 template<class T> Matrix<T> operator / (const Matrix<T>& a,const Matrix<T>& b);
 
 
+template<class T> Matrix<T> eye        (int nr,int nc);
+template<class T> Matrix<T> zero       (int nr,int nc);
 template<class T> Matrix<T> ary_mul    (const Matrix<T>& a,const Matrix<T>& b);
 template<class T> Matrix<T> ary_div    (const Matrix<T>& a,const Matrix<T>& b);
 template<class T> bool      operator ==(const Matrix<T>& a,const Matrix<T>& b);
